@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Your Name] - Professional Insurance Agent</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* --- General Styling --- */
+        :root {
+            --primary-color: #005A9C; /* A professional blue */
+            --secondary-color: #f4f4f4; /* Light grey background */
+            --text-color: #333;
+            --white-color: #fff;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        h1 { font-size: 2.8rem; }
+        h2 { font-size: 2.2rem; text-align: center; margin-bottom: 2rem; }
+        section { padding: 4rem 0; }
+
+        /* --- Hero/Introduction Section --- */
+        #hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 90vh;
+            background: var(--white-color);
+        }
+
+        .hero-text {
+            flex-basis: 55%;
+        }
+
+        .hero-text p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero-photo {
+            flex-basis: 40%;
+            text-align: center;
+        }
+
+        .hero-photo img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--white-color);
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #003f6b;
+        }
+
+        /* --- Services/Insurance Types Section --- */
+        #services {
+            background-color: var(--secondary-color);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .service-card {
+            background: var(--white-color);
+            padding: 2rem;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-card i {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .service-card h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        /* --- Statistics Section --- */
+        #stats {
+            background-color: var(--primary-color);
+            color: var(--white-color);
+        }
+
+        #stats h2 { color: var(--white-color); }
+
+        .stats-container {
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            margin: 1rem;
+        }
+        
+        .stat-item .number {
+            font-size: 3rem;
+            font-weight: 700;
+        }
+        
+        .stat-item .label {
+            font-size: 1.1rem;
+        }
+
+        /* --- Features Section --- */
+        #features {
+            background-color: var(--white-color);
+        }
+        .features-list {
+            list-style: none;
+            padding: 0;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .features-list li {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+        }
+        .features-list i {
+            color: #28a745; /* A success green */
+            margin-right: 15px;
+            font-size: 1.5rem;
+        }
+
+        /* --- Contact Section --- */
+        #contact {
+            background-color: var(--secondary-color);
+            text-align: center;
+        }
+
+        .contact-buttons {
+            margin-top: 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .contact-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 25px;
+            font-size: 1rem;
+            text-decoration: none;
+            color: var(--white-color);
+            border-radius: 5px;
+            transition: transform 0.2s ease;
+        }
+        .contact-btn:hover {
+            transform: scale(1.05);
+        }
+        .call-btn { background-color: #34a853; } /* Green */
+        .whatsapp-btn { background-color: #25d366; } /* WhatsApp Green */
+        .email-btn { background-color: #ea4335; } /* Red/Google Red */
+        
+        /* --- Footer --- */
+        footer {
+            background-color: #333;
+            color: var(--white-color);
+            text-align: center;
+            padding: 1rem 0;
+            font-size: 0.9rem;
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.2rem; }
+            h2 { font-size: 1.8rem; }
+            
+            #hero {
+                flex-direction: column-reverse;
+                text-align: center;
+                min-height: auto;
+                padding-top: 6rem;
+            }
+            .hero-text, .hero-photo {
+                flex-basis: 100%;
+            }
+            .hero-photo {
+                margin-bottom: 2rem;
+            }
+            .stats-container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <section id="hero">
+        <div class="container" style="display: flex; flex-wrap: wrap; align-items: center;">
+            <div class="hero-text">
+                <h1>Securing Your Future, One Policy at a Time</h1>
+                <p>
+                    I'm <strong>B. Krishnamurthy</strong>, a dedicated and experienced insurance agent based in Chennai, Tamil Nadu. My mission is to simplify the world of insurance for you and your family, providing clear, honest advice to help you find the perfect coverage for your needs.
+                </p>
+                <a href="#contact" class="cta-button">Contact Me</a>
+            </div>
+            <div class="hero-photo">
+                <img src="https://via.placeholder.com/400" alt="B. Krishnamurthy, Insurance Agent">
+            </div>
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="container">
+            <h2>Insurance We Offer</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-heartbeat"></i>
+                    <h3>Health Insurance</h3>
+                    <p>Comprehensive medical coverage to protect you and your loved ones from unexpected health expenses.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-life-ring"></i>
+                    <h3>Life Insurance</h3>
+                    <p>Ensure your family's financial security with term, whole life, and investment-linked plans.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-car"></i>
+                    <h3>Motor Insurance</h3>
+                    <p>Protect your car or bike with reliable policies covering accidents, theft, and third-party liability.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-home"></i>
+                    <h3>Property Insurance</h3>
+                    <p>Safeguard your home and its contents from unforeseen events like fire, theft, and natural calamities.</p>
+                </div>
+                 </div>
+        </div>
+    </section>
+
+    <section id="stats">
+        <div class="container">
+            <h2>Your Trust, Our Commitment</h2>
+            <div class="stats-container">
+                <div class="stat-item">
+                    <div class="number">500+</div>
+                    <div class="label">Happy Clients Served</div>
+                </div>
+                <div class="stat-item">
+                    <div class="number">98%</div>
+                    <div class="label">Claim Settlement Ratio</div>
+                </div>
+                <div class="stat-item">
+                    <div class="number">10+</div>
+                    <div class="label">Years of Experience</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="features">
+        <div class="container">
+            <h2>My Personal Commitment to You</h2>
+            <ul class="features-list">
+                <li><i class="fas fa-check-circle"></i>Continuous year-round support for all your policy-related questions.</li>
+                <li><i class="fas fa-check-circle"></i>Proactive suggestions for better policies and options as your needs change.</li>
+                <li><i class="fas fa-check-circle"></i>Hassle-free handling of all your policy renewals and paperwork.</li>
+                <li><i class="fas fa-check-circle"></i>Complete guidance and support during the entire claim process.</li>
+                <li><i class="fas fa-check-circle"></i>Personalized portfolio management to ensure you have the best coverage.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Ready to Secure Your Peace of Mind?</h2>
+            <p>Let's have a no-obligation chat about your insurance needs. Contact me today!</p>
+            <div class="contact-buttons">
+                <a href="tel:+919840765609" class="contact-btn call-btn"><i class="fas fa-phone"></i> Give a Call</a>
+                <a href="http://wa.me/+919840765609" target="_blank" class="contact-btn whatsapp-btn"><i class="fab fa-whatsapp"></i> Send a WhatsApp</a>
+                <a href="mailto:theinsurancepark@gmail.com" class="contact-btn email-btn"><i class="fas fa-envelope"></i> Send an Email</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 B. Krishnamurthy - All Rights Reserved. | Insurance Agent in Chennai, Tamil Nadu</p>
+    </footer>
+
+</body>
+</html>
